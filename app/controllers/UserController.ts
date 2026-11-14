@@ -9,12 +9,10 @@ export class UserController {
 
     private readonly UserService: UserService
 
-
     constructor() {
         this.UserService = new UserService();
 
     }
-
 
     @HttpCode(200)
     @Post("/CreateAndUpdate")
