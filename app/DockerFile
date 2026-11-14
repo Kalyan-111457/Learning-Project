@@ -1,0 +1,20 @@
+FROM node:20-slim
+
+# Prisma needs openssl at runtime
+RUN apt-get update -y && apt-get install -y --no-install-recommends openssl \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+COPY package*.json ./
+RUN npm ci
+
+COPY prisma ./prisma
+RUN npx prisma generate
+
+COPY . .
+
+EXPOSE 3000
+
+# The app runs through ts-node (tsc is configured with --noEmit)
+CMD ["npx", "ts-node", "server.ts"]
