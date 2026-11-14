@@ -53,8 +53,8 @@ export class UserRepository {
             })
 
 
-            if (!checkemailandphone) {
-                return "Please Try another email id and phone no .because same email id and phone no is already present"
+            if (checkemailandphone) {
+                return "Email or phone number already exists";
             }
 
             const updatedata = await this.Prisma.user.update({

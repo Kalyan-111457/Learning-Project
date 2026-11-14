@@ -46,8 +46,8 @@ model CourseSection {
   description String? @db.Text
   content     String  @db.Text
   videoUrl    String?
-  order       Int
-
+  order       Int?
+  isdeleted   Boolean @default(false)
   course    Course            @relation(fields: [courseId], references: [id], onDelete: Cascade)
   questions SectionQuestion[]
   progress  SectionProgress[]
@@ -64,6 +64,7 @@ model SectionQuestion {
   question  String @db.Text
   answer    String @db.Text
   order     Int
+  isdeleted Boolean @default(false)
 
   section CourseSection @relation(fields: [sectionId], references: [id], onDelete: Cascade)
 
