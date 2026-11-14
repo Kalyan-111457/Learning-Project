@@ -1,5 +1,5 @@
 export interface CourseTable{
-    id:number
+    id?:number
     title:string,
     description:string,
     thumbnail:string,
