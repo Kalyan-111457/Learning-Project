@@ -28,5 +28,5 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           args: >
-            -Dsonar.organization=Kalyan-111457
+            -Dsonar.organization=kalyan-111457
             -Dsonar.projectKey=Kalyan-111457_Learning-Project
