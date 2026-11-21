@@ -1,0 +1,46 @@
+version: 2
+
+updates:
+
+  # 1. Node.js / npm dependency updates
+  - package-ecosystem: "npm"
+    directory: "/app"
+    schedule:
+      interval: "daily"
+      time: "09:00"
+      timezone: "Asia/Kolkata"
+
+    open-pull-requests-limit: 10
+
+    # Automatically group dependency updates
+    groups:
+      npm-dependencies:
+        patterns:
+          - "*"
+
+    # Commit message format
+    commit-message:
+      prefix: "deps"
+      include: "scope"
+
+    # Labels for pull requests
+    labels:
+      - "dependencies"
+      - "security"
+
+  # 2. GitHub Actions dependency updates
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "daily"
+      time: "09:00"
+      timezone: "Asia/Kolkata"
+
+    open-pull-requests-limit: 5
+
+    commit-message:
+      prefix: "ci"
+
+    labels:
+      - "dependencies"
+      - "github-actions"
