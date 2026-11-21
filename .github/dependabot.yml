@@ -4,6 +4,7 @@ updates:
 
   # 1. Node.js / npm dependency updates
   - package-ecosystem: "npm"
+    target-branch: "develop"
     directory: "/app"
     schedule:
       interval: "daily"
@@ -30,6 +31,7 @@ updates:
 
   # 2. GitHub Actions dependency updates
   - package-ecosystem: "github-actions"
+    target-branch: "develop"
     directory: "/"
     schedule:
       interval: "daily"
