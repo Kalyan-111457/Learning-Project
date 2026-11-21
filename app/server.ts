@@ -4,6 +4,7 @@ import { UserController } from "./controllers/UserController";
 import { CourseController } from "./controllers/CourseController";
 import { CourseSectionController } from "./controllers/CourseSectionController";
 import { SectionQuestionController } from "./controllers/SectionQuestionController";
+import { EnrollmentController } from "./controllers/EnrollmentController";
 
-const app = createExpressServer({ controllers: [UserController, CourseController, CourseSectionController, SectionQuestionController] });
+const app = createExpressServer({ controllers: [UserController, CourseController, CourseSectionController, SectionQuestionController, EnrollmentController] });
 app.listen(3000, () => console.log("Server running on http://localhost:3000"));
